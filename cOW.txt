@@ -1,3 +1,13 @@
+  ;/*
+    ;//@title: Computer Organization And Prchitecture 
+    ;//@author: Istyak Rana
+    ;//@email: istyak.rana@gmail.com
+    ;//@date:18-04-2014 
+    ;*/
+
+
+
+
 mov cx,10
 mov dx,150
 cowhd:

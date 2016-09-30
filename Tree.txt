@@ -1,3 +1,11 @@
+  ;/*
+    ;//@title: Computer Organization And Prchitecture 
+    ;//@author: Istyak Rana
+    ;//@email: istyak.rana@gmail.com
+    ;//@date:18-04-2014 
+    ;*/
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;TREE 1 START;;;;;;;;;;;;;;;;;;;;;
 MOV CX,10
 MOV DX,60

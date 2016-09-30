@@ -1,5 +1,9 @@
-; A SHORT PROGRAM TO CHECK HOW
-; SET AND GET PIXEL COLOR WORKS
+    ;/*
+    ;//@title: Computer Organization And Prchitecture 
+    ;//@author: Istyak Rana
+    ;//@email: istyak.rana@gmail.com
+    ;//@date:18-04-2014 
+    ;*/
 
 NAME "PIXEL"
 

@@ -1,5 +1,10 @@
-; a short program to check how
-; set and get pixel color works
+  ;/*
+    ;//@title: Computer Organization And Prchitecture 
+    ;//@author: Istyak Rana
+    ;//@email: istyak.rana@gmail.com
+    ;//@date:18-04-2014 
+    ;*/
+
 
 name "pixel"
 
