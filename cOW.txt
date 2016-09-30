@@ -1,0 +1,204 @@
+mov cx,10
+mov dx,150
+cowhd:
+MOV AH,0CH
+MOV AL,8
+INT 10H
+INC CX 
+CMP CX,13
+JNZ cowhd
+
+
+mov cx, 16  ; column
+mov dx, 149  ; row
+mov al, 11  ; white
+mov ah, 0ch ; put pixel
+int 10h
+
+
+mov cx,10
+mov dx,150
+cowhda:
+MOV AH,0CH
+MOV AL,8
+INT 10H
+INC DX 
+CMP DX,154
+JNZ cowhda
+
+mov cx,10
+mov dx,154
+cowhqda:
+MOV AH,0CH
+MOV AL,8
+INT 10H
+INC CX 
+CMP CX,15
+JNZ cowhqda
+
+mov cx,15
+mov dx,154
+cowDhqda:
+MOV AH,0CH
+MOV AL,8
+INT 10H
+INC DX 
+CMP DX,158
+JNZ cowDhqda
+
+mov cx,13
+mov dx,150
+cowhdB:
+MOV AH,0CH
+MOV AL,8
+INT 10H
+DEC DX 
+CMP DX,146
+JNZ cowhdB
+
+mov cx,13
+mov dx,146
+cowhdC:
+MOV AH,0CH
+MOV AL,8
+INT 10H
+INC CX 
+CMP CX,20
+JNZ cowhdC
+
+mov cx,20
+mov dx,146
+cowhdD:
+MOV AH,0CH
+MOV AL,8
+INT 10H
+DEC DX 
+CMP DX,144
+JNZ cowhdD
+
+mov cx,20
+mov dx,144
+cowhde:
+MOV AH,0CH
+MOV AL,8
+INT 10H
+inC CX 
+CMP CX,23
+JNZ cowhde
+
+mov cx,23
+mov dx,144
+cowhdf:
+MOV AH,0CH
+MOV AL,8
+INT 10H
+INC DX
+CMP dx,146
+JNZ cowhdf
+
+mov cx,23
+mov dx,146
+cowhdG:
+MOV AH,0CH
+MOV AL,8
+INT 10H
+INC CX
+CMP CX,38
+JNZ cowhdG
+
+mov cx,38
+mov dx,146
+cowhdh:
+MOV AH,0CH
+MOV AL,8
+INT 10H
+INC DX
+CMP DX,158
+JNZ cowhdh
+
+mov cx,38
+mov dx,158
+cowhdi:
+MOV AH,0CH
+MOV AL,8
+INT 10H
+DEC CX
+CMP CX,15
+JNZ cowhdi
+
+XOR BX,BX
+
+mov cx,35
+mov dx,158
+cowleg:
+INC BL
+CMP BL,7
+JE LOLOP
+MOV AH,0CH
+MOV AL,8
+INT 10H
+INC DX
+CMP DX,165
+JNZ cowleg
+JMP EDDCOWLEG
+
+LOLOP:
+INC BH
+CMP BH,2
+JE EDDCOWLEG
+mov dx,158
+MOV BL,0
+SUB CX,2
+JMP cowleg
+
+EDDCOWLEG:
+
+XOR BX,BX
+
+mov cx,25
+mov dx,158
+cowleg1:
+INC BL
+CMP BL,7
+JE LOLOP1
+MOV AH,0CH
+MOV AL,8
+INT 10H
+INC DX
+CMP DX,165
+JNZ cowleg1
+JMP EDDCOWLEG1
+
+LOLOP1:
+INC BH
+CMP BH,2
+JE EDDCOWLEG1
+mov dx,158
+MOV BL,0
+SUB CX,2
+JMP cowleg1
+
+EDDCOWLEG1:
+
+mov cx,38
+mov dx,148
+cowTAIL:
+MOV AH,0CH
+MOV AL,8
+INT 10H
+INC CX
+CMP CX,42
+JNZ cowTAIL
+
+mov cx,42
+mov dx,148
+cowTAIL1:
+MOV AH,0CH
+MOV AL,8
+INT 10H
+INC DX
+CMP DX,156
+JNZ cowTAIL1          
+
+
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;COW END ;;;;;;;;;;;;;;;;;;;;;;

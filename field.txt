@@ -1,0 +1,126 @@
+;;;;;;;;;;;;;;;;;;;;;box field;;;;;;;;;;;;;
+
+;upper field strt line
+MOV CX,240
+MOV DX,130
+fieldst:
+MOV AH,0CH 
+MOV AL,08H 
+INT 10H 
+INC CX 
+CMP CX,300 
+JNZ fieldst
+
+MOV CX,240
+MOV DX,129
+fieldst1:
+MOV AH,0CH 
+MOV AL,08H 
+INT 10H 
+INC CX 
+CMP CX,300 
+JNZ fieldst1
+
+;;lower
+MOV CX,240
+MOV DX,198
+fieldls:
+MOV AH,0CH 
+MOV AL,08H 
+INT 10H 
+INC CX 
+CMP CX,300 
+JNZ fieldls
+
+MOV CX,240
+MOV DX,199
+fieldls1:
+MOV AH,0CH 
+MOV AL,08H 
+INT 10H 
+INC CX 
+CMP CX,300 
+JNZ fieldls1
+
+
+; LEFT VERTICAL LINE field 
+MOV CX,240
+MOV DX,130
+fieldL: 
+MOV AH,0CH
+MOV AL,08H
+INT 10H
+INC DX
+CMP DX,200
+JNZ fieldL
+
+;;
+MOV CX,241
+MOV DX,130
+fieldL1: 
+MOV AH,0CH
+MOV AL,08H
+INT 10H
+INC DX
+CMP DX,200
+JNZ fieldL1
+
+
+
+; RIGHT VERTICAL LINE field
+MOV CX,300
+MOV DX,130
+fieldR: 
+MOV AH,0CH
+MOV AL,08H
+INT 10H
+INC DX
+CMP DX,200
+JNZ fieldR
+
+;
+MOV CX,299
+MOV DX,130
+fieldR1: 
+MOV AH,0CH
+MOV AL,08H
+INT 10H
+INC DX
+CMP DX,200
+JNZ fieldR1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;end of box field;;;;;;;;;;;;;;;;;;;;;
+
+ 
+;;;;;;;;;;;;;start cropset ;;;;;;;;;;;;;;;;;;;;;;;;;;  
+
+xor bl,bl
+  
+MOV CX,240
+MOV DX,135
+crpst1:
+
+inc bl
+cmp bl,14
+je adddx10
+add cx,4
+MOV AH,0CH 
+MOV AL,02H 
+INT 10H 
+ 
+CMP CX,296 
+JNZ crpst1
+jmp edl
+
+adddx10:
+mov bl,0
+MOV CX,240
+cmp dx,200
+jg edl
+je edl
+add dx,10
+jmp crpst1
+
+edl:;get out of this seg
+
+;;;;;;;;;;;;;;;;end of cropset ;;;;;;;;;;;;;;;;;;;;;;

@@ -1,0 +1,228 @@
+; a short program to check how
+; set and get pixel color works
+
+name "pixel"
+
+org  100h
+
+mov ah, 0   ; set display mode function.
+mov al, 13h ; mode 13h = 320x200 pixels, 256 colors.
+int 10h     ; set it!
+
+
+
+
+
+; Draw the riverline
+
+;
+mov cx,260
+mov dx,0   ;uper left
+uperLT:
+mov ah,0ch
+mov al,0ch ;pixels=light red
+int 10h
+dec cx
+inc dx
+cmp cx,210
+cmp dx,50
+jnz uperLT
+
+;connect;
+mov cx,210
+mov dx,50
+conuperLT:
+mov ah,0ch
+mov al,0ch ;pixels=light red
+int 10h
+inc cx
+cmp cx,220
+jnz conuperLT
+;connect;
+
+mov cx,320    ;uper right
+mov dx,10
+uprRT: mov ah,0ch
+mov al,0ch
+int 10h
+dec cx
+inc dx
+cmp cx,260
+cmp dx,70
+jnz uprRT
+int 10h 
+;upper  end
+
+
+;connect;
+mov cx,260
+mov dx,70
+conuperRT:
+mov ah,0ch
+mov al,0ch ;pixels=light red
+int 10h
+inc cx
+cmp cx,270
+jnz conuperRT
+;connect;
+
+;;middle1;;
+mov cx,220
+mov dx,50   ;mid1 left
+mid1LT:
+mov ah,0ch
+mov al,0ch ;pixels=light red
+int 10h
+dec cx
+inc dx
+cmp cx,170
+cmp dx,100
+jnz mid1LT
+
+;connect;
+mov cx,170
+mov dx,100
+conmid1LT:
+mov ah,0ch
+mov al,0ch ;pixels=light red
+int 10h
+inc cx
+cmp cx,180
+jnz conmid1LT
+;connect;
+
+;
+mov cx,270    ;mid1 right
+mov dx,70
+mid1RT:
+ mov ah,0ch
+mov al,0ch
+int 10h
+dec cx
+inc dx
+cmp cx,230
+cmp dx,110
+jnz mid1RT
+int 10h
+;;middle1;; 
+
+;connect;
+mov cx,230
+mov dx,110
+conmid1RT:
+mov ah,0ch
+mov al,0ch ;pixels=light red
+int 10h
+inc cx
+cmp cx,240
+jnz conmid1RT
+;connect;
+
+
+
+;;middle2;;
+mov cx,180
+mov dx,100   ;mid2 left
+mid2LT:
+mov ah,0ch
+mov al,0ch ;pixels=light red
+int 10h
+dec cx
+inc dx
+cmp cx,120
+cmp dx,150
+jnz mid2LT
+
+;connect;
+mov cx,130
+mov dx,150
+conmid2LT:
+mov ah,0ch
+mov al,0ch ;pixels=light red
+int 10h
+inc cx
+cmp cx,140
+jnz conmid2LT
+;connect;
+
+mov cx,240    ;mid2 right
+mov dx,110
+mid2RT:
+mov ah,0ch
+mov al,0ch
+int 10h
+dec cx
+inc dx
+cmp cx,200
+cmp dx,150
+jnz mid2RT
+int 10h
+;;middle2;;
+
+;mid end
+
+;connect;
+mov cx,200
+mov dx,150
+conmid2RT:
+mov ah,0ch
+mov al,0ch ;pixels=light red
+int 10h
+inc cx
+cmp cx,210
+jnz conmid2RT
+;connect;
+
+
+;;lower;;
+mov cx,140
+mov dx,150   ;low left
+lowLT:
+mov ah,0ch
+mov al,0ch ;pixels=light red
+int 10h
+dec cx
+inc dx
+cmp cx,90
+cmp dx,200
+jnz lowLT
+
+;
+mov cx,210    ;low right
+mov dx,150
+lowRT:
+mov ah,0ch
+mov al,0ch
+int 10h
+dec cx
+inc dx
+cmp cx,160
+cmp dx,200
+jnz lowRT
+int 10h
+;;lower;;
+
+;lower end
+
+
+xor al, al  ; al = 0
+
+mov cx, 10  ; column
+mov dx, 20  ; row
+mov ah, 0dh ; get pixel
+int 10h
+
+
+; pause the screen for dos compatibility:
+
+;wait for keypress
+  mov ah,00
+  int 16h			
+
+; return to text mode:
+  mov ah,00 ; set display mode function.
+  mov al,03 ; normal text mode 3
+  int 10h   ; set it!
+
+
+ret
